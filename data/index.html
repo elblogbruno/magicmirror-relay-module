@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+	<head>
+		<title>ESP8266 Material Lite</title>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+	 
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	  
+ 
+   <body>
+		<link rel="stylesheet" href="vendor/google-fonts.css">
+		<link rel="stylesheet" href="vendor/material.css">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--5-col">
+				<button onclick="sendData(16,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (16)</button>
+				<button onclick="sendData(16,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (16)</button>
+				
+				<button onclick="sendData(4,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (4)</button>
+				<button onclick="sendData(4,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (4)</button>
+				
+				<button onclick="sendData(5,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">3D Printer OFF</button>
+				<button onclick="sendData(5,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">3D Printer ON</button>
+				<!-- <button type="button" onclick="sendData()">Send data</button> -->
+			</div>
+		</div>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--5-col">
+				<button onclick="sendData(16,0,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (16) MQTT</button>
+				<button onclick="sendData(16,1,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (16) MQTT</button>
+				
+				<button onclick="sendData(4,0,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (4) MQTT</button>
+				<button onclick="sendData(4,1,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (4) MQTT</button>
+				
+				<!-- <button type="button" onclick="sendData()">Send data</button> -->
+			</div>
+		</div>
+		  <script src="vendor/material.js"></script>
+	</body>
+	
+    <script type="text/javascript" src="./js/main.js"></script>
+</html>
