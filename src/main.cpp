@@ -26,6 +26,8 @@ void setup(void)
 	ConnectWiFi_STA();
 	InitServer();
 	InitPins();
+  ResetState();
+  
 	Serial.println("Connecting to MQTT Server");
   	Serial.println(mqtt_server);
   	client.setServer(mqtt_server, 1883);
@@ -47,7 +49,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("TURNING LIGHT OFF");// Turn the LED on (Note that LOW is the voltage level
     // but actually the LED is on; this is because
     // it is acive low on the ESP-01)
-  } else if((char)payload[0] == '5'){
+  } else if((char)payload[0] == '6'){
      digitalWrite(16, HIGH); 
      Serial.print("TURNING LIGHT ON"); 
       //client.publish("GPIO2", "TURNING LIGHT ON");
@@ -55,17 +57,17 @@ void callback(char* topic, byte* payload, unsigned int length) {
   if((char)payload[0] == '2') {
     digitalWrite(5, LOW);
      //client.publish("GPIO2", "TURNING LIGHT OFF");
-    Serial.print("TURNING LIGHT OFF"); // Turn the LED off by making the voltage HIGH
-  }else if((char)payload[0] == '6'){
+    Serial.print("TURNING PRINTER OFF"); // Turn the LED off by making the voltage HIGH
+  }else if((char)payload[0] == '7'){
      digitalWrite(5, HIGH);
-     Serial.print("TURNING LIGHT ON");
+     Serial.print("TURNING PRINTER ON");
       //client.publish("GPIO2", "TURNING LIGHT ON");  
   }
  if((char)payload[0] == '3') {
     digitalWrite(4, LOW);
      //client.publish("GPIO2", "TURNING LIGHT OFF");
     Serial.print("TURNING LIGHT OFF"); // Turn the LED off by making the voltage HIGH
-  }else if((char)payload[0] == '7'){
+  }else if((char)payload[0] == '8'){
      //client.publish("GPIO2", "TURNING LIGHT ON");
      digitalWrite(4, HIGH);  
      Serial.print("TURNING LIGHT ON");
@@ -74,8 +76,17 @@ void callback(char* topic, byte* payload, unsigned int length) {
     digitalWrite(0, LOW); //CONTROLA EL ENCHUFE ALTERNO
     //client.publish("GPIO2", "TURNING LIGHT OFF");
     Serial.print("TURNING LIGHT OFF"); // Turn the LED off by making the voltage HIGH
-  }else if((char)payload[0] == '8'){
+  }else if((char)payload[0] == '9'){
      digitalWrite(0, HIGH); 
+     Serial.print("TURNING LIGHT ON"); 
+     //client.publish("GPIO2", "TURNING LIGHT ON");
+  }
+  if((char)payload[0] == '5') {
+    digitalWrite(2, LOW); //CONTROLA EL ENCHUFE directo ROJO
+    //client.publish("GPIO2", "TURNING LIGHT OFF");
+    Serial.print("TURNING LIGHT OFF"); // Turn the LED off by making the voltage HIGH
+  }else if((char)payload[0] == '10'){
+     digitalWrite(2, HIGH); 
      Serial.print("TURNING LIGHT ON"); 
      //client.publish("GPIO2", "TURNING LIGHT ON");
   }

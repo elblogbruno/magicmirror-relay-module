@@ -19,7 +19,16 @@ void setLightStatus(int port,int status,bool shouldMqtt)
     }
 }
 void InitPins(){
-    pinMode(16, OUTPUT); 
-    pinMode(5, OUTPUT);
-    pinMode(4, OUTPUT);
+    pinMode(16, OUTPUT); //led azul esp8266
+    pinMode(2, OUTPUT); //enchufe directo rojo 
+    pinMode(5, OUTPUT); // enchufe normal directo
+    pinMode(4, OUTPUT); //el otro con regleta no tan directo.
+    pinMode(0, OUTPUT); // OTRO
+}
+void ResetState(){
+    digitalWrite(16, LOW); 
+    digitalWrite(2, LOW); 
+    digitalWrite(5, LOW); 
+    digitalWrite(4, LOW); 
+    digitalWrite(0, LOW); 
 }

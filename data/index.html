@@ -14,12 +14,18 @@
 		<link rel="stylesheet" href="vendor/google-fonts.css">
 		<link rel="stylesheet" href="vendor/material.css">
 		<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--5-col">
-				<button onclick="sendData(16,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (16)</button>
-				<button onclick="sendData(16,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (16)</button>
+			<div class="mdl-cell mdl-cell--2-col">
+				<button onclick="sendData(16,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">LED ESP8266 OFF (16)</button>
+				<button onclick="sendData(16,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">LED ESP8266 ON (16)</button>
 				
-				<button onclick="sendData(4,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (4)</button>
-				<button onclick="sendData(4,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (4)</button>
+				<button onclick="sendData(0,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (0)</button>
+				<button onclick="sendData(0,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (0)</button>
+
+				<button onclick="sendData(2,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Other OFF (2)</button>
+				<button onclick="sendData(2,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Other  ON (2)</button>
+				
+				<button onclick="sendData(4,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Other OFF (4)</button>
+				<button onclick="sendData(4,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Other ON (4)</button>
 				
 				<button onclick="sendData(5,0,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">3D Printer OFF</button>
 				<button onclick="sendData(5,1,false)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">3D Printer ON</button>
@@ -27,9 +33,9 @@
 			</div>
 		</div>
 		<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--5-col">
-				<button onclick="sendData(16,0,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (16) MQTT</button>
-				<button onclick="sendData(16,1,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (16) MQTT</button>
+			<div class="mdl-cell mdl-cell--2-col">
+				<button onclick="sendData(2,0,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (2) MQTT</button>
+				<button onclick="sendData(2,1,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (2) MQTT</button>
 				
 				<button onclick="sendData(4,0,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI OFF (4) MQTT</button>
 				<button onclick="sendData(4,1,true)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Raspberry PI ON (4) MQTT</button>
