@@ -2,7 +2,8 @@
 #include <ESPAsyncWebServer.h>
 #include <FS.h>
 #include <ArduinoJson.h>
-
+#include <ESP8266mDNS.h>
+ 
 #include "config.h"  // Sustituir con datos de vuestra red
 #include "API.hpp"
 #include "Server.hpp"
@@ -23,11 +24,16 @@ void setup(void)
 {
 	Serial.begin(9600);
 	SPIFFS.begin();
-	ConnectWiFi_STA();
+	ConnectWiFi_STA(true);
 	InitServer();
 	InitPins();
   ResetState();
-  
+  // Iniciar mDNS a direccion esp8266.local
+   if (!MDNS.begin("relay")) 
+   {             
+     Serial.println("Error iniciando mDNS");
+   }
+   Serial.println("mDNS iniciado");
 	Serial.println("Connecting to MQTT Server");
   	Serial.println(mqtt_server);
   	client.setServer(mqtt_server, 1883);
